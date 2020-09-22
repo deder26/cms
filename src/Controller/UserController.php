@@ -49,6 +49,7 @@ class UserController extends AppController{
 		$this->autoRender = false;
 
 		$data = $this->request->data;
+
 		
 		$user = $this->Users->newEntity();
 

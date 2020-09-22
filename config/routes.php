@@ -46,9 +46,13 @@ use Cake\Routing\Route\DashedRoute;
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::connect('/',['controller'=>'User','action'=>'index']);
-Router::connect('/insert',['controller'=>'User','action'=>'insert']);
-Router::connect('/update/:id',['controller'=>'User','action'=>'edit'],["pass"=>["id"]]);
-Router::connect('/delete/:id',['controller'=>'User','action'=>'delete']);
+Router::connect('/user/insert',['controller'=>'User','action'=>'insert']);
+Router::connect('/user/edit/:id',['controller'=>'User','action'=>'edit'],["pass"=>["id"]]);
+Router::connect('/user/delete/:id',['controller'=>'User','action'=>'delete'],["pass"=>["id"]]);
+Router::connect('/user/save',['controller'=>'User','action'=>'save']);
+Router::connect('/user/update',['controller'=>'User','action'=>'update']);
+
+
 
 Router::scope('/', function (RouteBuilder $routes) {
     // Register scoped middleware for in scopes.
